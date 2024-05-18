@@ -7,11 +7,11 @@ import { FaInstagramSquare } from "react-icons/fa";
 import Icons from './Icons';
 const Navbar = () => {
   return (
-    <nav>
-      <div className='bg-[#5ac670] flex justify-between items-center h-10 px-20 max-md:hidden max-lg:px-6'>
+    <nav className=''>
+      <div className='bg-[#5ac670] flex justify-between items-center h-14 px-20 max-md:hidden max-lg:px-6   '>
         <div className='flex gap-10'>
-          <p className='text-white text-[18px] font-bold'>9501433347</p>
-          <p className='text-white text-[18px] font-bold'>info.techquasarservices@gmail.com</p>
+          <p className='text-white text-[20px] font-bold'>9501433347</p>
+          <p className='text-white text-[20px] font-bold'>info.techquasarservices@gmail.com</p>
         </div>
         <Icons></Icons>
         {/* <div className='flex gap-3'>

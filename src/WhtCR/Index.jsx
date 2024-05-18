@@ -27,8 +27,7 @@ const Index = () => {
           <Route path="/return-refund" element={<Refund />} />
           <Route path="/shipping-delivery" element={<Shipping />} />
           <Route path="/product-category-shop" element={<FilterSidebar />} />
-          {/* <Route path="/product-category-shop/product-detail" element={<AllDetail />} /> */}
-          <Route path="/product-category-shop/199-store" element={<One199 />} />
+          <Route path="/product-category-shop/199-store" element={<FilterSidebar />} />
         </Routes>
         <Footer />
      

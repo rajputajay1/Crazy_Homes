@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const RelatedProduct = () => {
     const RelatedProducts = [
@@ -28,6 +30,13 @@ const RelatedProduct = () => {
         },
         
     ];
+    const navigate = useNavigate();
+    const [selectedCard, setSelectedCard] = useState(null);
+
+    const handleCardClick = (card) => {
+        setSelectedCard(card);
+        navigate('/product-detail', { state: { selectedCard: card } });
+    };
     return (
         <>
             <p  className='text-3xl font-bold  max-lg:text-2xl  text-blue-500 mb-5 lg:px-8 max-lg:px-8  pt-8 '>
@@ -35,10 +44,11 @@ const RelatedProduct = () => {
             </p>
             <div className='grid grid-cols-4 lg:gap-20 max-lg:gap-7  max-lg:px-8  max-lg:grid-cols-2  pb-10 lg:px-8 '>
                 {RelatedProducts.map((card, index) => (
-                    <div key={index} className="max-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center">
-                        <a href="#">
+                    <div key={index} className="cursior-pointer max-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center"
+                    onClick={handleCardClick}>
+                       
                             <img className="rounded-t-lg" src={card.img} alt="" />
-                        </a>
+                     
                         <div className="py-2">
                             <p className="text-[20px] font-bold text-[#13008a] dark:text-white text-center px-2 italic lg:text-nowrap">{card.Name}</p>
                             <p className="font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
