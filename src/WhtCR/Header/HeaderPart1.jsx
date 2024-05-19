@@ -6,6 +6,7 @@ import logo from "../../images/logo.png";
 import Login from '../User/Login';
 import { FaHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { useSelector } from 'react-redux';
 
 
 const HeaderPart = () => {
@@ -31,6 +32,8 @@ const HeaderPart = () => {
         setSignInPopupOpen(false);
     };
 
+    const { carts } = useSelector((state) => state.allcart)
+    console.log("pinu", carts);
     return (
         <>
             <div className='flex items-center flex-col lg:flex-row lg:gap-20 w-full justify-between max-lg:px-3 lg:px-20'>
@@ -51,10 +54,10 @@ const HeaderPart = () => {
                     </div>
                 </div> */}
                 <div className='flex gap-20'>
-                    <div className='relative max-lg:hidden cursor-pointer flex flex-col items-center justify-center text-center'  onClick={handleLoginClick}>
+                    <div className='relative max-lg:hidden cursor-pointer flex flex-col items-center justify-center text-center' onClick={handleLoginClick}>
 
-                    <CgProfile className='size-7 text-[#5ac670]'></CgProfile>
-                    
+                        <CgProfile className='size-7 text-[#5ac670]'></CgProfile>
+
                         <p className='text-[#5ac670] text-[18px] font-bold'>
                             Login
                         </p>
@@ -204,9 +207,17 @@ const HeaderPart = () => {
                         <p className='text-[18px] font-bold text-[#5ac670]'>Washlist</p>
                     </div>
 
-                    <div className='flex flex-col  max-lg:hidden'>
-                        <FaShoppingCart className='size-7  text-[#5ac670]'></FaShoppingCart>
-                        <p className='text-[18px] font-bold text-[#5ac670]'>Card</p>
+                    <div className='max-lg:hidden relative inline-block'>
+                        <FaShoppingCart className="size-7 text-[#5ac670]" />
+                        <p className='text-[18px] font-bold text-[#5ac670]'>Cart</p>
+                        <p className="absolute top-[-14px] right-0 text-red-400 text-[20px] font-bold flex items-center justify-center">
+                            {carts.length}
+                        </p>
+                    </div>
+
+
+                    <div className="relative inline-block">
+
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import sale1 from '../../images/sale1.png'
+import sale1 from '../../images/sale1.png';
 
 
 const Courses = ({ sortCriteria, updateTotalResults, handleCardClick }) => {
@@ -8,14 +8,14 @@ const Courses = ({ sortCriteria, updateTotalResults, handleCardClick }) => {
         {
             id: 264,
             Name: "Spoken English Mastery Course ",
-            img: "./49five.png",
+            img: "/49five.png",
             current_price: "499.00",
             original_price: "49.00",
           },
           {
             id: 265,
             Name: "The Ultimate Graphic Design Video Course ",
-            img: "./49six.jpg",
+            img: "/49six.jpg",
             current_price: "499.00",
             original_price: "49.00",
           },

@@ -6,14 +6,14 @@ const Graphics = ({ sortCriteria, updateTotalResults, handleCardClick }) => {
         {
             id: 160,
             Name: "50,000+ T-Shirt Design Package",
-            img: "./49four.png",
+            img: "/49four.png",
             current_price: "499.00",
             original_price: "49.00",
           },
         {
             id: 161,
             Name: "875 GB+ Ultimate Graphic Designing Pack ",
-            img: "./graphics.png",
+            img: "/graphics.png",
             current_price: "499.00",
             original_price: "99.00",
           },

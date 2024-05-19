@@ -47,13 +47,29 @@ const HeaderPart2 = () => {
         navigate("/shipping-delivery");
     };
     const shopPage = () => {
-        navigate("/Product-category-shop");
+        navigate("/Product-category-shop/default");
         setSelectedItem(2);
     };
+    
     const ReelsBundle = () => { 
-        navigate("/product-category-shop/199-store");
+        navigate("/Product-category-shop/AI-Real-Bundle");
     }
-
+    const Courses = () => { 
+        navigate("/Product-category-shop/Courses");
+    }
+    const Software = () => { 
+        navigate("/Product-category-shop/Software");
+    }
+    const PluginsTeplate = () => { 
+        navigate("/Product-category-shop/Plugins-Template");
+    }
+    const Graphics = () => { 
+        navigate("/Product-category-shop/Graphics-Bundle");
+    }
+    const Ebook = () => { 
+        navigate("/Product-category-shop/E-Book");
+    }
+   
     return (
         <>
             <hr className='max-lg:hidden' />
@@ -68,34 +84,34 @@ const HeaderPart2 = () => {
                                 Browse All Category <IoMdArrowDropdown className='mt-1' />
                             </li>
                             {browsDropdownOpen && (
-                                <div className='absolute cursor-pointer mt-1 top-full left-1/2 transform -translate-x-1/2 bg-white shadow-md w-60 items-center text-center'>
+                                <div className='absolute cursor-pointer mt-1 top-full left-1/2 transform -translate-x-1/2 bg-white shadow-md w-60 items-center text-center'onClick={handleBrowseClick}>
                                     <p
                                         className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white'
                                         onClick={ReelsBundle}>
                                         Reel Bundle
                                     </p>
                                     <hr />
-                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={handleCloseDropdown}>
+                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={Courses}>
                                         Courses
                                     </p>
                                     <hr />
-                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={handleCloseDropdown}>
+                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={Software}>
                                         Software
                                     </p>
                                     <hr />
-                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={handleCloseDropdown}>
+                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={PluginsTeplate}>
                                         Plugins & Template
                                     </p>
                                     <hr />
-                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={handleCloseDropdown}>
+                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={Graphics}>
                                         Graphics Bundle
                                     </p>
                                     <hr />
-                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={handleCloseDropdown}>
+                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={Ebook}>
                                         E-Book
                                     </p>
                                     <hr />
-                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={handleCloseDropdown}>
+                                    <p className='text-[19px] py-2 font-semibold text-[#5ac670] hover:bg-[#5ac670] hover:text-white' onClick={ReelsBundle}>
                                         Free Product
                                     </p>
                                 </div>

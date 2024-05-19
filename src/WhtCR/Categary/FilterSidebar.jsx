@@ -15,17 +15,24 @@ import Ai_Reel from '../SubCatagary/Ai_Reel';
 import Reel_Bundle from '../SubCatagary/Reel_Bundle';
 import Reseller from '../SubCatagary/Reseller';
 import Tranding_Product from '../SubCatagary/Tranding_Product';
+import { Route, Link, Routes, useParams } from 'react-router-dom';
 const FilterSidebar = () => {
+    const params = useParams();
+
+    console.log(params);
+    console.log(params.id);
     const navigate = useNavigate();
-    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState(params.id);
     const [filterOpen, setFilterOpen] = useState(false);
     const [sortCriteria, setSortCriteria] = useState('Latest');
     const [totalResults, setTotalResults] = useState(0);
 
 
 
-    const handleCategoryClick = (category) => {
+    const handleCategoryClick = (category,) => {
         setSelectedCategory(category);
+        console.log("asdaa", category);
+        navigate(`/product-category-shop/${category}`);
     };
 
     const handleFilterClick = () => {
@@ -40,35 +47,36 @@ const FilterSidebar = () => {
     const updateTotalResults = (count) => {
         setTotalResults(count);
     };
+
     const renderSelectedCategoryComponent = () => {
         switch (selectedCategory) {
-            case '₹199 Store':
+            case '₹199-Store':
                 return <One199 sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case '₹99 Store':
+            case '₹99-Store':
                 return <NineNine sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case '₹49 Store':
+            case '₹49-Store':
                 return <Only49 sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case '₹21 Store':
+            case '₹21-Store':
                 return <Only21 sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
             case 'Software':
                 return <Software sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'Plugins & Template':
+            case 'Plugins-Template':
                 return <Plugin_Template sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'Graphics Bundle':
+            case 'Graphics-Bundle':
                 return <Graphics sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
             case 'E-Book':
                 return <E_Book sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
             case 'Courses':
                 return <Courses sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'Normal Reels':
+            case 'Normal-Reels':
                 return <Noramal_Reel sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'AI Real Bundle':
+            case 'AI-Real-Bundle':
                 return <Ai_Reel sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'Real Bundle':
+            case 'Real-Bundle':
                 return <Reel_Bundle sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'Reseller Account':
+            case 'Reseller-Account':
                 return <Reseller sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
-            case 'Trending Product':
+            case 'Trending-Product':
                 return <Tranding_Product sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} handleCardClick={handleCardClick} />;
             default:
                 return <Catagery1 sortCriteria={sortCriteria} updateTotalResults={updateTotalResults} />;
@@ -79,9 +87,17 @@ const FilterSidebar = () => {
 
     const handleCardClick = (card) => {
         setSelectedCard(card);
+
         console.log("Ajay:", card);
         navigate('/product-detail', { state: { selectedCard: card } });
 
+
+    };
+
+
+
+    const One199click = () => {
+        navigate("/product-category-shop/199-store");
     };
     return (
         <>
@@ -97,21 +113,21 @@ const FilterSidebar = () => {
                     </p>
                     <ul className='flex flex-col gap-1 text-[16px] font-bold text-gray-800 mt-4 cursor-pointer'>
                         {[
-                            'Trending Product',
-                            'Reseller Account',
-                            'Real Bundle',
-                            'AI Real Bundle',
-                            'Animation Reels',
-                            'Normal Reels',
+                            'Trending-Product',
+                            'Reseller-Account',
+                            'Real-Bundle',
+                            'AI-Real-Bundle',
+                            'Animation-Reels',
+                            'Normal-Reels',
                             'Courses',
                             'E-Book',
-                            'Graphics Bundle',
-                            'Plugins & Template',
+                            'Graphics-Bundle',
+                            'Plugins-Template',
                             'Software',
-                            '₹21 Store',
-                            '₹49 Store',
-                            '₹99 Store',
-                            '₹199 Store',
+                            '₹21-Store',
+                            '₹49-Store',
+                            '₹99-Store',
+                            '₹199-Store',
                         ].map((category, index) => (
                             <li
                                 key={index}

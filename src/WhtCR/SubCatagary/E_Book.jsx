@@ -6,7 +6,7 @@ const E_Book = ({ sortCriteria, updateTotalResults, handleCardClick }) => {
         {
           id: 200,
           Name: "Life Transforming Best Selling E-books",
-          img: "./49.png",
+          img: "/49.png",
           current_price: "499.00",
           original_price: "99.00",
         },
@@ -14,7 +14,7 @@ const E_Book = ({ sortCriteria, updateTotalResults, handleCardClick }) => {
         {
           id: 201,
           Name: "10 Stock Market eBooks & Trading Materials  ",
-          img: "./save1.png",
+          img: "/save1.png",
           current_price: "499.00",
           original_price: "199.00",
         },
