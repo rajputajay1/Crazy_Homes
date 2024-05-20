@@ -6,7 +6,7 @@ import AllCards from './AllCards'
 const AllMain = () => {
   return (
     <>
-      <div className='bg-[#eff6ff]'>
+      <div className='bg-[#eff6ff] max-lg:py-10'>
         <ImagesPart />
         <Deal />
         <Sale />

@@ -141,7 +141,7 @@ const Plugin_Template = ({ sortCriteria, updateTotalResults, handleCardClick }) 
                             <p className="text-[20px] font-bold text-[#13008a] dark:text-white text-center px-2 italic max-lg:text-[16px]">{card.Name}</p>
                             <p className="font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
                             <div className='flex justify-evenly items-center'>
-                                <p className='text-[#f9847a] font-bold text-[18px] max-lg:text-[13px]'>
+                                <p className='text-[#f9847a] font-bold text-[18px] max-lg:text-[13px] line-through'>
                                     ₹ {card.current_price}
                                 </p>
                                 <p className='text-[#04a21a] font-bold text-[18px] max-lg:text-[13px]'>

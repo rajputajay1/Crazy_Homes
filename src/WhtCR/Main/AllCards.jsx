@@ -13,6 +13,8 @@ const AllCards = () => {
         setSelectedCard(card);
         console.log("Ajay:", card);
         navigate('/product-detail', { state: { selectedCard: card } });
+        window.scrollTo(0, 0);
+
 
     };
 
@@ -236,9 +238,17 @@ const AllCards = () => {
         },
     ];
 
+    const ReelsBundle = () => {
+        navigate("/Product-category-shop/AI-Real-Bundle");
+    }
+
+    const TopSelleing = () => {
+        navigate("/Product-category-shop/default");
+    }
+
     return (
         <>
-            <div className='grid grid-cols-6 gap-5 lg:px-16 max-lg:px-5  max-lg:grid-cols-2'>
+            <div className='grid grid-cols-6 gap-5 lg:px-16 max-lg:px-5 max-lg:grid-cols-3 max-md:grid-cols-2'>
                 {Allcards.map((card, index) => (
                     <div key={card.id} className=" cursor-pointer max-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center" onClick={() => handleCardClick(card)}>
 
@@ -248,7 +258,7 @@ const AllCards = () => {
                             <p className=" text-[20px] font-bold  text-[#13008a] dark:text-white text-center px-2 italic">{card.Name}</p>
                             <p className=" font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
                             <div className='flex justify-evenly items-center '>
-                                <p className='text-[#f9847a] font-bold text-[18px]'>
+                                <p className='text-[#f9847a] font-bold text-[18px] line-through'>
                                     ₹ {card.current_price}
                                 </p>
                                 <p className='text-[#04a21a] font-bold text-[18px]'>
@@ -264,13 +274,13 @@ const AllCards = () => {
                     <p className='text-2xl max-lg:text-[18px]   font-bold text-[#222222]'> <span className='text-blue-500'>REELS</span> BUNDLE
 
                     </p>
-                    <p className='text-2xl max-lg:text-[18px] font-bold border-b-2  border-black'>
+                    <p className='text-2xl max-lg:text-[18px] font-bold border-b-2  border-black' onClick={ReelsBundle}>
                         View More
                     </p>
                 </div>
             </div>
 
-            <div className='grid grid-cols-6 gap-5 lg:px-16 max-lg:px-5  max-lg:grid-cols-2 mt-10'>
+            <div className='grid grid-cols-6 gap-5 lg:px-16 max-lg:px-5  max-lg:grid-cols-3 max-md:grid-cols-2 mt-10'>
                 {AllCards2.map((card, index) => (
                     <div key={card.id} className=" cursor-pointer max-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center" onClick={() => handleCardClick(card)}>
 
@@ -280,7 +290,7 @@ const AllCards = () => {
                             <p className=" text-[20px] font-bold  text-[#13008a] dark:text-white text-center px-2 italic">{card.Name}</p>
                             <p className=" font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
                             <div className='flex justify-evenly items-center '>
-                                <p className='text-[#f9847a] font-bold text-[18px]'>
+                                <p className='text-[#f9847a] font-bold text-[18px]  line-through'>
                                     ₹ {card.current_price}
                                 </p>
                                 <p className='text-[#04a21a] font-bold text-[18px]'>
@@ -296,12 +306,12 @@ const AllCards = () => {
                     <p className='text-2xl max-lg:text-[18px]   font-bold text-[#222222]'> <span className='text-blue-500'>TOP SELLING </span> PRODUCTS
 
                     </p>
-                    <p className='text-2xl max-lg:text-[18px] font-bold border-b-2  border-black'>
+                    <p className='text-2xl max-lg:text-[18px] font-bold border-b-2  border-black' onClick={TopSelleing}>
                         View More
                     </p>
                 </div>
             </div>
-            <div className='mt-8 py-14 grid grid-cols-3 gap-5 lg:px-16 max-lg:grid-cols-2  max-lg:px-5'>
+            <div className='mt-8 py-14 grid grid-cols-3 gap-5 lg:px-16 max-lg:grid-cols-3 max-md:grid-cols-2  max-lg:px-5'>
                 {AllCards3.map((card, index) => (
 
                     <div className="flex flex-col  cursor-pointer bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" onClick={() => handleCardClick(card)}>
@@ -310,7 +320,7 @@ const AllCards = () => {
                             <h5 className=" text-[20px] italic font-bold tracking-tight text-gray-900 dark:text-white">{card.Name}</h5>
                             <p className=" font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
                             <div className='flex gap-5 items-center  max-md:justify-center '>
-                                <p className='text-[#f9847a] font-bold text-[18px]'>
+                                <p className='text-[#f9847a] font-bold text-[18px] line-through'>
                                     ₹ {card.current_price}
                                 </p>
                                 <p className='text-[#04a21a] font-bold text-[18px]'>

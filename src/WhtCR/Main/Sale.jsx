@@ -42,36 +42,36 @@ const Sale = () => {
 
     const handleCardClick = (card) => {
         setSelectedCard(card);
+        console.log("Ajay:", card);
         navigate('/product-detail', { state: { selectedCard: card } });
+        window.scrollTo(0, 0);
+
     };
 
     const MoreClick = () => {
-        navigate("/product-category-shop");
+        navigate("/Product-category-shop/default");
     };
+
 
     return (
         <>
             <div className='lg:flex gap-10 lg:px-16 justify-around'>
                 <img src="./19.png" alt="Sale Banner" className='lg:h-[450px] max-lg:w-full max-lg:px-5' />
-                <div className='grid grid-cols-4 justify-center gap-5 max-lg:grid-cols-2 max-lg:px-5 max-lg:mt-5'>
-                    {saleItems.map((item) => (
-                        <div 
-                            key={item.id}
-                            className="max-w-[250px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center cursor-pointer"
-                            onClick={() => handleCardClick(item)}
-                        >
-                            <img className="rounded-t-lg" src={item.img} alt={item.name} />
-                            <div className="pt-5">
-                                <h5 className="mb-2 text-[20px] italic font-bold tracking-tight text-[#13008a] dark:text-white">
-                                    {item.name}
-                                </h5>
-                                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
-                                <div className='flex justify-evenly'>
-                                    <p className='text-[#f9847a] font-bold text-[18px]'>
-                                        ₹{item.current_price}
+                <div className='grid grid-cols-4  gap-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-lg:px-5 max-lg:mt-5'>
+                    {saleItems.map((card, index) => (
+                        <div key={card.id} className=" cursor-pointer max-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center" onClick={() => handleCardClick(card)}>
+
+                            <img className="rounded-t-lg" src={card.img} alt="" />
+
+                            <div className="py-2 ">
+                                <p className=" text-[20px] font-bold  text-[#13008a] dark:text-white text-center px-2 italic">{card.name}</p>
+                                <p className=" font-normal text-gray-700 dark:text-gray-400">⭐⭐⭐⭐⭐</p>
+                                <div className='flex justify-evenly items-center '>
+                                    <p className='text-[#f9847a] font-bold text-[18px] line-through'>
+                                        ₹ {card.current_price}
                                     </p>
-                                    <p className='text-[#04a21a] font-bold text-[18px] line-through'>
-                                        ₹{item.original_price}
+                                    <p className='text-[#04a21a] font-bold text-[18px]'>
+                                        ₹ {card.original_price}
                                     </p>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ const Sale = () => {
                     <p className='text-2xl max-lg:text-[18px] font-bold text-[#222222]'>
                         <span className='text-blue-500'>LATEST</span> PRODUCTS!
                     </p>
-                    <p 
+                    <p
                         className='text-2xl max-lg:text-[18px] font-bold border-b-2 border-black cursor-pointer'
                         onClick={MoreClick}
                     >

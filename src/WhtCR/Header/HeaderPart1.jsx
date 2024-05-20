@@ -7,12 +7,14 @@ import Login from '../User/Login';
 import { FaHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { useSelector } from 'react-redux';
+import { IoMenu } from "react-icons/io5";
 
 
 const HeaderPart = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [SignInPopupOpen, setSignInPopupOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleLoginClick = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -31,15 +33,31 @@ const HeaderPart = () => {
     const closeSignUpPopup = () => {
         setSignInPopupOpen(false);
     };
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     const { carts } = useSelector((state) => state.allcart)
     console.log("pinu", carts);
     return (
         <>
-            <div className='flex items-center flex-col lg:flex-row lg:gap-20 w-full justify-between max-lg:px-3 lg:px-20'>
-                <div className='flex items-center max:lg:justify-start py-5'>
-                    <img src="./mainlogo.jpg" alt="" className='h-32 w-40' />
-                    <FaShoppingCart className='size-10 text-[#5ac670] lg:hidden'></FaShoppingCart>
+            <div className='flex items-center max-lg:flex-row lg:gap-20 w-full justify-between max-lg:px-10 lg:px-20'>
+                <div className='lg:hidden'>
+                    <IoMenu className='lg:hidden size-10 text-[#5ac670]' onClick={toggleMenu} ></IoMenu>
+                    {isMenuOpen && (
+                        <div>
+                            ajay
+                        </div>
+
+                    )}
+                </div>
+                <div className='flex items-center  justify-between py-5'>
+
+                    <div className='pl-5'>
+
+                        <img src="./mainlogo.jpg" alt="" className='h-32 w-40' />
+                    </div>
+
                 </div>
                 {/* <div className="lg:w-[600px] w-full">
                     <div className="shadow-md rounded-full border-2 border-[#ed5a69] w-full">
@@ -53,7 +71,7 @@ const HeaderPart = () => {
                         </div>
                     </div>
                 </div> */}
-                <div className='flex gap-20'>
+                <div className='flex  lg:gap-20'>
                     <div className='relative max-lg:hidden cursor-pointer flex flex-col items-center justify-center text-center' onClick={handleLoginClick}>
 
                         <CgProfile className='size-7 text-[#5ac670]'></CgProfile>
@@ -207,8 +225,8 @@ const HeaderPart = () => {
                         <p className='text-[18px] font-bold text-[#5ac670]'>Washlist</p>
                     </div>
 
-                    <div className='max-lg:hidden relative inline-block'>
-                        <FaShoppingCart className="size-7 text-[#5ac670]" />
+                    <div className='relative inline-block'>
+                        <FaShoppingCart className="size-7 max-lg:size-9 text-[#5ac670]" />
                         <p className='text-[18px] font-bold text-[#5ac670]'>Cart</p>
                         <p className="absolute top-[-14px] right-0 text-red-400 text-[20px] font-bold flex items-center justify-center">
                             {carts.length}

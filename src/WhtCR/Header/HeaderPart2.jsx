@@ -73,7 +73,7 @@ const HeaderPart2 = () => {
     return (
         <>
             <hr className='max-lg:hidden' />
-            <div className='flex justify-around items-center mt-4 max-lg:hidden'>
+            <div className='flex justify-around items-center mt-4 max-xl:hidden'>
                 <div>
                     <ul className='font-bold text-[20px] text-black flex gap-10'>
                         <div className='relative cursor-pointer'>
